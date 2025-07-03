@@ -19,3 +19,5 @@ CREATE TABLE IF NOT EXISTS dynamic_rule_query_arguments (
                                                             rule_query_id BIGINT REFERENCES dynamic_rule_queries(id) ON DELETE CASCADE,
                                                             argument_value VARCHAR(255)
 );
+
+

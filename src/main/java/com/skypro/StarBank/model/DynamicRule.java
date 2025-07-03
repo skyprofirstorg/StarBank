@@ -23,10 +23,6 @@ public class DynamicRule {
 
     public DynamicRule() {}
 
-//    public void setId(String id) {
-//        this.id = id;
-//    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -46,6 +42,7 @@ public class DynamicRule {
     public String getName() {
         return name;
     }
+
 
     public String getText() {
         return text;

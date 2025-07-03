@@ -40,4 +40,6 @@ public class Query {
     public void setNegate(boolean negate) {
         this.negate = negate;
     }
+
+
 }

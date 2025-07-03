@@ -12,12 +12,11 @@ import java.util.Optional;
 public class TopSavingRule implements RecommendationRuleSet {
 
     private final RecommendationRepository repo;
-    private final ProductCatalog productCatalog;
 
     Logger logger = LoggerFactory.getLogger(TopSavingRule.class);
 
-    public TopSavingRule(ProductCatalog productCatalog, RecommendationRepository repo) {
-        this.productCatalog = productCatalog;
+
+    public TopSavingRule(RecommendationRepository repo) {
         this.repo = repo;
     }
 

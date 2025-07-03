@@ -10,6 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class QueryRequest {
+
     private String query;
     private List<String> arguments;
     private boolean negate;
@@ -25,4 +26,5 @@ public class QueryRequest {
     public boolean isNegate() {
         return negate;
     }
+
 }

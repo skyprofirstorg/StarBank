@@ -5,6 +5,7 @@ import com.skypro.StarBank.service.RecommendationService;
 import com.skypro.StarBank.dto.response.Response;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 @RestController
@@ -12,7 +13,6 @@ import java.util.List;
 public class RecommendationController {
 
     private final RecommendationService recommendationService;
-    
 
     public RecommendationController(RecommendationService recommendationService) {
         this.recommendationService = recommendationService;

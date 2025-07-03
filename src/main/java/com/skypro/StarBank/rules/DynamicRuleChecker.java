@@ -21,7 +21,7 @@ public class DynamicRuleChecker {
     private boolean evaluate(String userId, Query q) {
         boolean result = switch (q.getQuery()) {
             case "USER_OF" -> repo.hasUserProductOfType(userId, q.getArguments().get(0));
-            case "ACTIVE_USER_OF" -> repo.isUserActive(userId, q.getArguments().get(0)); // ✅ Теперь метод существует
+            case "ACTIVE_USER_OF" -> repo.isUserActive(userId, q.getArguments().get(0));
             case "TRANSACTION_SUM_COMPARE" ->
                     compare(repo.getTransactionSum(userId, q.getArguments().get(0), q.getArguments().get(1)),
                             Double.parseDouble(q.getArguments().get(3)), q.getArguments().get(2));
