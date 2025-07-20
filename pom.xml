@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.skypro</groupId>
 	<artifactId>starbank</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.761</version>
 	<name>StarBank</name>
 	<description>Star bank incorparated</description>
 	<url/>

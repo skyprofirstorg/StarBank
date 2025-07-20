@@ -3,17 +3,14 @@ package com.skypro.StarBank.controller;
 import com.skypro.StarBank.dto.request.DynamicRuleRequest;
 import com.skypro.StarBank.dto.response.DynamicRuleResponse;
 import com.skypro.StarBank.model.DynamicRule;
-import com.skypro.StarBank.model.Query;
 import com.skypro.StarBank.repository.DynamicRuleRepository;
 import com.skypro.StarBank.service.DynamicRuleService;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/rule")
