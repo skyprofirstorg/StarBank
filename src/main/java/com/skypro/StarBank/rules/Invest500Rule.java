@@ -1,7 +1,7 @@
 package com.skypro.StarBank.rules;
 
+import com.skypro.StarBank.dto.response.RecommendationDTO;
 import com.skypro.StarBank.model.ProductCatalog;
-import com.skypro.StarBank.model.RecommendationDTO;
 import com.skypro.StarBank.repository.RecommendationRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,4 +35,6 @@ public class Invest500Rule implements RecommendationRuleSet {
 
         return Optional.of(repo.getById("147f6a0f-3b91-413b-ab99-87f081d60d5a"));
     }
+
+
 }

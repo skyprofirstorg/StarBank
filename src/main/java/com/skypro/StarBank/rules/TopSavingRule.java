@@ -1,7 +1,6 @@
 package com.skypro.StarBank.rules;
 
-import com.skypro.StarBank.model.ProductCatalog;
-import com.skypro.StarBank.model.RecommendationDTO;
+import com.skypro.StarBank.dto.response.RecommendationDTO;
 import com.skypro.StarBank.repository.RecommendationRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,12 +11,11 @@ import java.util.Optional;
 public class TopSavingRule implements RecommendationRuleSet {
 
     private final RecommendationRepository repo;
-    private final ProductCatalog productCatalog;
 
     Logger logger = LoggerFactory.getLogger(TopSavingRule.class);
 
-    public TopSavingRule(ProductCatalog productCatalog, RecommendationRepository repo) {
-        this.productCatalog = productCatalog;
+
+    public TopSavingRule(RecommendationRepository repo) {
         this.repo = repo;
     }
 

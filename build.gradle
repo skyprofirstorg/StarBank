@@ -3,10 +3,13 @@
  */
 
 plugins {
-    id 'application'
-    id("org.springframework.boot") version "3.5.3"
+	id "com.gorylenko.gradle-git-properties" version "2.4.1"
     id 'java-library'
     id 'maven-publish'
+    id 'application'
+    id 'java'
+    id 'org.springframework.boot' version '3.5.3'
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
 repositories {
@@ -17,19 +20,25 @@ repositories {
 }
 
 dependencies {
-    implementation("com.zaxxer:HikariCP:2.3.2")
-    implementation("com.h2database:h2:2.3.232")
     api libs.org.springframework.boot.spring.boot.starter.data.jdbc
     api libs.org.springframework.boot.spring.boot.starter.jdbc
+    api libs.org.springframework.boot.spring.boot.starter.data.jpa
+    api libs.org.springframework.spring.jdbc
     api libs.org.springframework.boot.spring.boot.starter.web
     api libs.org.projectlombok.lombok
+    api libs.com.h2database.h2
+    api libs.com.github.ben.manes.caffeine.caffeine
+    api libs.org.springframework.boot.spring.boot.starter.cache
+    api libs.org.springdoc.springdoc.openapi.starter.webmvc.ui
+    api libs.me.paulschwarz.spring.dotenv
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'com.github.pengrad:java-telegram-bot-api:6.9.1'
     testImplementation libs.org.springframework.boot.spring.boot.starter.test
 }
 
 group = 'com.skypro'
 version = '0.0.1-SNAPSHOT'
 description = 'StarBank'
-java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     publications {
@@ -48,5 +57,15 @@ tasks.withType(Javadoc) {
 }
 
 application {
-    mainClass = 'com.skypro.starbank.StarBankApplication'
+    mainClass = 'com.skypro.StarBank.StarBankApplication'
 }
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+springBoot {
+	buildInfo()
+}
+

@@ -1,4 +1,4 @@
-package com.skypro.StarBank.model;
+package com.skypro.StarBank.dto.response;
 
 import lombok.Getter;
 

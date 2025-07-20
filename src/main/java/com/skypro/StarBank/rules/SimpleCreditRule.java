@@ -1,7 +1,6 @@
 package com.skypro.StarBank.rules;
 
-import com.skypro.StarBank.model.ProductCatalog;
-import com.skypro.StarBank.model.RecommendationDTO;
+import com.skypro.StarBank.dto.response.RecommendationDTO;
 import com.skypro.StarBank.repository.RecommendationRepository;
 import org.springframework.stereotype.Component;
 
@@ -11,11 +10,9 @@ import java.util.Optional;
 public class SimpleCreditRule implements RecommendationRuleSet {
 
     private final RecommendationRepository repo;
-    private final ProductCatalog productCatalog;
 
-    public SimpleCreditRule(RecommendationRepository repo, ProductCatalog productCatalog) {
+    public SimpleCreditRule(RecommendationRepository repo) {
         this.repo = repo;
-        this.productCatalog = productCatalog;
     }
 
     @Override
@@ -27,6 +24,7 @@ public class SimpleCreditRule implements RecommendationRuleSet {
 
         if (totalDeposits <= totalSpent) return Optional.empty();
         if (totalSpent <= 100000) return Optional.empty();
+
 
         return Optional.of(repo.getById("ab138afb-f3ba-4a93-b74f-0fcee86d447f"));
     }
