@@ -39,7 +39,6 @@ public class TGListener {
                 if (update.message() != null && update.message().text() != null) {
                     String chatId = update.message().chat().id().toString();
                     String text = update.message().text();
-                    String output;
                     if (text.startsWith("/recommendations")) {
                         String[] parts = text.split(" ", 2);
                         if (parts.length == 2) {
