@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
@@ -24,6 +25,7 @@ public class ManagementController {
     }
 
     @PostMapping("/clear-caches")
+    @ResponseStatus(org.springframework.http.HttpStatus.OK)
     public ResponseEntity<Void> clearAllCaches() {
         cacheManager.getCacheNames().forEach(name -> {
             Cache cache = cacheManager.getCache(name);
@@ -33,7 +35,8 @@ public class ManagementController {
         });
         return ResponseEntity.ok().build();
     }
-     @GetMapping("/info")
+    @GetMapping("/info")
+    @ResponseStatus(org.springframework.http.HttpStatus.OK)
     public Map<String, String> getInfo() {
         return Map.of(
             "name", buildProperties.getName(),

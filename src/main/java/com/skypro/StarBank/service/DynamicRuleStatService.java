@@ -4,27 +4,27 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.skypro.StarBank.repository.DynamicRulesStatDAO;
+import com.skypro.StarBank.repository.DynamicRulesStatRepository;
 
 @Service
 public class DynamicRuleStatService {
 
-    private final DynamicRulesStatDAO dao;
+    private final DynamicRulesStatRepository repository;
 
-    public DynamicRuleStatService(DynamicRulesStatDAO dao) {
-        this.dao = dao;
+    public DynamicRuleStatService(DynamicRulesStatRepository repository) {
+        this.repository = repository;
     }
 
     public void recordRuleExecution(String ruleId) {
-        dao.incrementRuleFireCount(ruleId);
+        repository.incrementRuleFireCount(ruleId);
     }
 
     public List<Map<String, Object>> getStats() {
-        return dao.getAllStats();
+        return repository.getAllStats();
     }
 
     public void deleteStat(String ruleId) {
-        dao.deleteStat(ruleId);
+        repository.clearStat(ruleId);
     }
 }
 

@@ -19,5 +19,10 @@ CREATE TABLE IF NOT EXISTS dynamic_rule_query_arguments (
                                                             rule_query_id BIGINT REFERENCES dynamic_rule_queries(id) ON DELETE CASCADE,
                                                             argument_value VARCHAR(255)
 );
-
+-- Создание таблицы для хранения статистики по выполнению правил
+CREATE TABLE IF NOT EXISTS DYNAMIC_RULES_STAT (
+                RULE_ID BIGINT PRIMARY KEY,
+                COUNT BIGINT NOT NULL DEFAULT 0,
+                LAST_EXECUTED TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
 
