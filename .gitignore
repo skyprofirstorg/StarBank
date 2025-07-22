@@ -46,3 +46,8 @@ transaction.trace.db
 
 bin/
 .env
+
+build.gradle
+gradlew
+gradlew.bat
+settings.gradle

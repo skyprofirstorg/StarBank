@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skypro.StarBank.service.DynamicRuleStatService;
@@ -22,6 +23,7 @@ public class DynamicRuleStatController {
     }
 
     @GetMapping("/stats")
+    @ResponseStatus(org.springframework.http.HttpStatus.OK)
     public Map<String, List<Map<String, String>>> getAllStats() {
         List<Map<String, Object>> rawStats = service.getStats();
 
@@ -36,6 +38,7 @@ public class DynamicRuleStatController {
     }
 
     @PostMapping("/stats/{ruleId}")
+    @ResponseStatus(org.springframework.http.HttpStatus.OK)
     public void delete(@PathVariable String ruleId) {
         service.deleteStat(ruleId);
     }

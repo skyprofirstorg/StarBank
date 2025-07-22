@@ -19,6 +19,7 @@ public class RecommendationController {
     }
 
     @GetMapping("/{user_id}")
+    @ResponseStatus(org.springframework.http.HttpStatus.OK)
     public Response getRecommendations(@PathVariable("user_id") String userId) {
         List<RecommendationDTO> recommendations = recommendationService.getRecommendations(userId);
         return new Response(userId, recommendations);
