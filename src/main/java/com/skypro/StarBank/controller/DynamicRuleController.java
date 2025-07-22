@@ -24,6 +24,7 @@ public class DynamicRuleController {
     }
 
     @PostMapping
+    @ResponseStatus(org.springframework.http.HttpStatus.CREATED)
     public DynamicRuleResponse createRule(@RequestBody DynamicRuleRequest request) {
         return ruleService.createRule(request);
     }
@@ -31,6 +32,7 @@ public class DynamicRuleController {
 
 
     @GetMapping
+    @ResponseStatus(org.springframework.http.HttpStatus.OK)
     public Map<String, List<DynamicRule>> getAllRules() {
         Map<String, List<DynamicRule>> response = new HashMap<>();
         response.put("data", ruleRepository.findAll());
@@ -38,6 +40,7 @@ public class DynamicRuleController {
     }
 
     @DeleteMapping("/{product_id}")
+    @ResponseStatus(org.springframework.http.HttpStatus.OK)
     public void deleteRule(@PathVariable String product_id) {
         ruleRepository.deleteById(product_id);
 
