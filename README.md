@@ -12,5 +12,5 @@
 - **Spring Boot**
 - **PostgreSQL**
 - **Pengrad**
-- **Maven || Gardle**
+- **Maven**
 - **Swagger/OpenAPI**
