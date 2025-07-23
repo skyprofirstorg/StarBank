@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS dynamic_rules (
 -- Создание таблицы для хранения запросов (query) в рамках правила
 CREATE TABLE IF NOT EXISTS dynamic_rule_queries (
                                                     id BIGSERIAL PRIMARY KEY,
-                                                    dynamic_rule_id VARCHAR(255) REFERENCES dynamic_rules(product_id) ON DELETE CASCADE,
+                                                    dynamic_rule_id VARCHAR(255) REFERENCES dynamic_rules(id) ON DELETE CASCADE,
                                                     query_type VARCHAR(255),
                                                     negate BOOLEAN
 );
