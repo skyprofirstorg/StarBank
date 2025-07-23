@@ -4,6 +4,7 @@ package com.skypro.StarBank.listener;
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
 import com.pengrad.telegrambot.model.Update;
+import com.pengrad.telegrambot.request.SendMessage;
 import com.skypro.StarBank.service.BotService;
 import jakarta.annotation.PostConstruct;
 
@@ -25,8 +26,8 @@ public class TGListener {
             for (Update update : updates) {
                 if (update.message() != null && update.message().text() != null) {
                     String chatId = String.valueOf(update.message().chat().id());
-                    String messageText = update.message().text();
-                    botService.sendMessage(chatId, messageText);
+                    String message = botService.sendMessage(update.message().text());
+                    telegramBot.execute(new SendMessage(chatId, message));
                 }
             }
             return UpdatesListener.CONFIRMED_UPDATES_ALL;

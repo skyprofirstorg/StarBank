@@ -8,11 +8,11 @@ import java.util.UUID;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @Repository
-public class UserDAO {
+public class UserRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public UserDAO(JdbcTemplate jdbcTemplate) {
+    public UserRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

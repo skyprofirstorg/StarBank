@@ -4,13 +4,13 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
-import com.skypro.StarBank.repository.UserDAO;
+import com.skypro.StarBank.repository.UserRepository;
 
 @Service
 public class UserService {
-    private final UserDAO userDAO;
+    private final UserRepository userDAO;
 
-    public UserService(UserDAO userDAO) {
+    public UserService(UserRepository userDAO) {
         this.userDAO = userDAO;
     }
 
