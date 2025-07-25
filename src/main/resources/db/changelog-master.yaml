@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: db/migration/create_rules_table.sql
+      relativeToChangelog: true
